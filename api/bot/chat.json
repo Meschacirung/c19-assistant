@@ -1,0 +1,65 @@
+{
+    "greetings":[
+        "Bonjour",
+        "Salut",
+        "Bonsoir"
+    ],
+    "thanks":[
+        "Je ne fais que mon boulot",
+        "Content de vous avoir aidé",
+        "Tout le plaisir est pour moi",
+        "C'est moi qui vous remercie",
+        "Je vous en pris",
+        "Merci à vous",
+        "Ravis que cela vous plaise"
+    ],
+    "routine":[
+        "portez vous bien !",
+        "respectez les consignes.",
+        "prennez soin de vous et de vos proches."
+    ],
+    "basicquestions":[
+        "Qu'est ce que je peux faire pour vous ?",
+        "Que puis-je faire pour vous ?",
+        "En quoi puis-je vous être utile ?"
+    ],
+    "compliments":[
+        "je me sens toujours de bonne humeur quand je vous sens tapoter une question sur votre clavier.",
+        "merci de vous être connecté",
+        "c'est un plaisir !"
+    ],
+    "goodbye":[
+        "Merci à vous, on se dit à bientôt ?",
+        "Je me ferais un plasir de discuter à nouveau avec vous",
+        "Merci d'avoir parlé avec moi, passez une bonne journée"
+    ],
+    "features": {
+        "tweets" : [
+            "Je vous donne en temps réel les derniers tweets de l'I N R B et l'O M S R D C",
+            "Voici les derniers tweets de l'I N R B et l'O M S R D C",
+            "L'institut national de recherches biomédical a twitté :"
+        ],
+        "handwash" : [
+            "Okay, je vais lancer un chrono de 30 sécondes pour vous aider à vous lavez les mains",
+            "Je joue un morceau pour vous aider à vous lavez les mains"
+        ],
+        "questions" : [
+            "Je réponds à toutes vos questions à propos du coronavirus, il suffit de les poser",
+            "D'accord, qu'est-ce que vous voulez savoir ?"
+        ],
+        "Test" : [
+            "Je ne suis pas médecin mais je connais les symtômes du coronavirus donc, je peux vous aider.",
+            "D'accord, parlons de vos symptômes",
+            "Dites moi ce que vous ressentez :"
+        ]
+    },
+    "errors": [
+        "Désolé, je n'ai pas de réponse à votre question, revenez plus târd",
+        "Désolé, je bug parfois, mais rassurez vous, vos questions m'aident à m'améliorer",
+        "Désolé, je ne peux pas répondre",
+        "Céla me dépasse",
+        "Je ne sais faire que 4 choses, vous donnez les tweets, vous faire un test, vous aider à vous laver les mains et enfin répondre à toutes vos questions à propos du coronavirus."
+    ]
+}
+
+    

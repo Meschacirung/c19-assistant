@@ -1,0 +1,29 @@
+{
+  "name": "assistant",
+  "version": "1.0.0",
+  "description": "Covid-19 assistant",
+  "main": "app.js",
+  "scripts": {
+    "test": "",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meschack/c19-assistant.git"
+  },
+  "author": "Méschac Irung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meschack/c19-assistant/issues"
+  },
+  "homepage": "https://github.com/Meschack/c19-assistant#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "node-emoji": "^1.10.0",
+    "nodemon": "^2.0.2",
+    "socket.io": "^2.3.0"
+  }
+}

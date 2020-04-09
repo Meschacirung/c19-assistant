@@ -1,0 +1,39 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<div id="home" class="container-fluid">
+    <div class="container" style="padding:120px 0px 100px 0px;">
+        <div class="row justify-content-start">
+            <div class="col-lg-5 col-md-7 mt-5">
+                <h1 class="blue-dark opacity-2 font-weight-normal">Réponses à toutes vos questions sur le <span class="display-4 text-danger font-weight-bold">Covid-19 </span>.</h1>
+                <p class="mt-4">Je suis un chat bot, je vous aide à faire un test en me basant sur vos symptômes et vous donne les derniers tweets de l'INRB et OMSRDC.</p>
+                <div class="mt-5 text-lg-left text-md-left text-sm-left text-center">
+                    <a href="/assistant" class="btn btn-primary mr-lg-4">Commencer la dicussion</a>
+                </div>
+            </div>
+            <div class="col-lg-7 m-flex-center col-md-5 mesures" >
+                <div style="position: absolute;">
+                    <img src="images/chatbot_illustration-02.png" class="opacity img-fluid" alt="">
+                </div>
+                <div class="text-center" style="position:relative; margin-bottom:-70px;">
+                    <img src="images/slider-moc-2-1.png" width="700" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('partials/applications') %>
+<%- include('partials/features') %>
+<%- include('partials/symptomes') %>
+<%- include('partials/routine') %>
+<%- include('partials/advice') %>
+<div class="fixed-action-btn">
+    <div class="m-flex-center notification">10</div>
+    <a href="/assistant" title="Chat" class="btn-floating shadow-lg bg-white btn-lg" style="z-index:1; position:relative;">
+      <i class="icon-chat text-primary"></i>
+    </a>
+    <div class="spinner-grow" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<%- include('partials/footer') %>
+<%- include('partials/scripts') %>

@@ -1,0 +1,32 @@
+<div class="container" style="margin-top:100px;">
+    <h2 class="text-center blue-text-dark">Mésures barrière.</h2>
+    <p class="text-center mt-3 col-lg-5 m-auto">Ces mésures simples peuvent sauver des vies, respectez les au quotidien.
+        <div class="col-lg-5 m-auto pt-4">
+            <div style="position: absolute; left:0; right:0; margin-top:-10px" class="stepper-circle stepper-primary m-auto"></div>
+            <div class="border-top">
+            </div>
+        </div>
+    </p>
+    <div class="row m-flex-center">
+        <div class="col-lg-12 order-lg-1 order-2">
+            <div class="row mt-5 mb-5 m-flex-center">
+                <% routines.forEach(function(routines){ %>
+                <div class="col-lg-4 col-md-6 col-sm-6 opacity-2 mt-lg-2 mt-md-2 mt-3">
+                    <div class="rounded-2 bg-white shadow-md  p-lg-2 p-md-2 p-2">
+                        <div class="row p-lg-2 p-md-2 p-1">
+                            <div class="col-4 m-flex-center">
+                                <div class="bg-primary-light rounded-circle p-3">
+                                    <img src="<%= routines.icon %>" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <p><%= routines.description %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>

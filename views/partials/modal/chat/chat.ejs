@@ -1,0 +1,51 @@
+<div id="chat" class="p-2 rounded-tb chat-section scrollbar-black scroller">
+    <form action="/" method="POST" class="hidden">
+        <input type="text" name="name" id="name" data-conv-question="Quel est votre prénom ?">
+        <input type="text"  data-conv-question="Salut {name}:0, c'est un plaisir !" data-no-answer="true">
+        <select name="features" data-conv-question="Qu'est-ce que je peux faire vous ?">
+            <option value="Test">Test</option>
+            <option value="Questions">J'ai des questions</option>
+            <option value="game">Lavage de mains</option>
+            <option value="Twwets">Tweets</option>
+        </select>
+        <select name="autorisation" data-conv-question="Je vais vous poser quelques questions en rapport avec les symptômes du coronavirus covid-19; Etes vous d'accord ?">
+            <option value="Okay d'accord">Okay d'accord</option>
+            <option value="Non merci">Non merci</option>
+        </select>
+        <input type="text"  data-conv-question="C'est parti" data-no-answer="true">
+        <select name="fievre" data-conv-question="Pensez-vous avoir ou avoir eu la fièvre ces derniers jours (frissons, sueurs) ?">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+        </select>
+        <select name="toux" data-conv-question="Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+        </select>
+        <select name="gout_odorat" data-conv-question="Forte diminution ou perte de votre goût ou de votre odorat ?">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+        </select>
+        <select name="tete" data-conv-question="Avez-vous des maux de tête ?">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+        </select>
+        <input type="text" data-conv-question="Nous avons presque finis :(" data-no-answer="true">
+        <select name="respiration" data-conv-question="Avez-vous du mal à respirer ?">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+        </select>
+        <select name="gorge" data-conv-question="Ces derniers jours, avez vous eu de maux de gorge ?">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+        </select>
+        <select name="exposition" data-conv-question="Etes vous entré en contact avec des personnes provenant dans des zones à risque ou présentant des symptômes du coronavirus ces derniers jours ?">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+        </select>
+        <input type="text" data-conv-question="Nous avons finis !" data-no-answer="true">
+        <input type="text" data-conv-question="Dans quelques sécondes, je vais vous dire ce que je pense de votré état de santé." data-no-answer="true">
+        <input type="text" data-conv-question="{name}:0, <%= locals.diagnostic %>" data-no-answer="true">
+        <input type="text" data-conv-question="Surveillez attentivement votre état de santé. N'ésitez pas à contacter votre médecin en cas de doute." data-no-answer="true">
+        <input type="text" data-conv-question="Restez chez vous en attendant que les symptômes disparaissent, mais restez attentif à toute aggravation." >
+    </form>
+</div>

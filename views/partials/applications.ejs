@@ -1,0 +1,28 @@
+
+<div id="applications" class="container-fluid">
+    <div class="container" style="padding:50px 0px;">
+        <div class="text-center mb-5">
+            <h1 class="blue-dark title-sm">Autres applications</h1>
+            <p> Ces applications vous donnent des statistiques et informations <br> concernant l'évolution de la pandémie.</p>
+        </div>
+        <div class="col-lg-12 m-auto">
+            <div class="row">
+                <% applications.forEach(function(applications){ %>
+                <div class="col-lg-4 col-md-6 mt-3">
+                    <div class="shadow-md p-2 bg-white rounded-tb">
+                        <a href="" class="text-dark text-center">
+                            <div class="col-4 m-auto pt-4">
+                                <img src="<%- applications.icon %>" alt="" class="opacity-2 img-fluid">
+                            </div>
+                            <div class="p-3">
+                                <h4><%= applications.title %></h4>
+                                <p><%= applications.description %></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
