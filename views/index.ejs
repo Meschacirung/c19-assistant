@@ -1,39 +1,179 @@
-<%- include('partials/head') %>
-<%- include('partials/header') %>
-<div id="home" class="container-fluid">
-    <div class="container" style="padding:120px 0px 100px 0px;">
-        <div class="row justify-content-start">
-            <div class="col-lg-5 col-md-7 mt-5">
-                <h1 class="blue-dark opacity-2 font-weight-normal">Réponses à toutes vos questions sur le <span class="display-4 text-danger font-weight-bold">Covid-19 </span>.</h1>
-                <p class="mt-4">Je suis un chat bot, je vous aide à faire un test en me basant sur vos symptômes et vous donne les derniers tweets de l'INRB et OMSRDC.</p>
-                <div class="mt-5 text-lg-left text-md-left text-sm-left text-center">
-                    <a href="/assistant" class="btn btn-primary mr-lg-4">Commencer la dicussion</a>
+<%- include('./partials/head') %>
+<style>
+    #sidebarmenu{
+        z-index:2000;
+        cursor: pointer;
+    }
+    .sidebar{
+        position: fixed;
+        z-index:1900;
+        width:80%;
+        height:100%;
+        background: #ffffff;
+        box-shadow: 0 0px 30px #1d1d1d38;
+        animation: ease sidebar .5s;
+        margin-left:-100%;
+    }
+    .sidebar-wrapper{
+        background: #53535d49;
+        position: absolute;
+        height:100vh;
+        width:100vw;
+        z-index:1899;
+        animation: ease fade .3s;
+        display: none;
+    }
+    @keyframes fade{
+        0%{
+            opacity: -1;
+        }
+        100%{
+            opacity: 2;
+        }
+    }
+    @keyframes sidebar {
+        0%{
+            margin-left: -100%;
+        };
+        75%{
+            margin-left: -36%;
+        };
+        100%{
+            margin-left : 0px;
+        }
+
+    }
+    .splash{
+        background: #ffffff;
+        height:100vh;
+        width: 100vw;
+        position:fixed;
+        z-index:999;
+        animation:hide .2s 1.7s ease forwards;
+    }
+    .link {
+        margin-top:30px;
+        font-weight:300;
+        font-size:17px;
+        color: #5d5d5d !important;
+    }
+    .link:hover{
+        color:#343638 !important;
+        font-weight: 600;
+        transition: ease .1s;
+    }
+    .logo{
+        position: fixed;
+        bottom:35%;
+        text-align: center;
+        left:0;
+        right: 0;
+        z-index:1000;
+        background: #ffffff;
+        animation:hide .5s 1.5s ease forwards;
+    }
+    .powered{
+        position: fixed;
+        bottom:5%;
+        text-align: center;
+        left:0;
+        right: 0;
+        z-index:1000;
+        animation:hide 1s 1.2s ease forwards;
+    }
+    
+    @keyframes hide {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        z-index: -1000;
+      }
+    }
+  </style>
+<div>
+    <span class="splash"></span>
+    <div class="logo">
+        <img src="images/chatsplsh.png" width="250" alt="" class="img-fluid">
+    </div>
+    <div class="powered">
+        <span class="text-dark-2">Powered By</span>
+        <a href=""><h3 class="text-center text-dark-2">Méschac iRUNG</h3></a>
+        <hr class="hr">
+    </div>
+    <div class="sidebar-wrapper">
+        
+    </div>
+    <div class="sidebar" id="sidebar">
+        <div class="pl-3 pr-3 pt-4 pb-4">
+            <div class="row m-flex-center">
+                <div class="col-auto">
+                    <a href="/"><img src="images/covid 19.png" width="120" alt="" class="img-fluid"></a>
+                </div>
+                <div class="col-4 ml-auto">
+                    <div class="p-3 shadow-sm-2 rounded-2 text-center">
+                        <a>
+                            <i class="icon-face send text-dark"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-7 m-flex-center col-md-5 mesures" >
-                <div style="position: absolute;">
-                    <img src="images/chatbot_illustration-02.png" class="opacity img-fluid" alt="">
+        </div>
+        <nav class="pl-3 pr-3 pt-4">
+            <ul class="list-unstyled">
+                <li><a href="/" class="link"><i class="icon-home mr-3"></i>Accueil</a></li>
+                <li class="mt-3"><a href="/" class="link"><i class="icon-gear mr-3"></i>Options</a></li>
+                <li class="mt-3"><a href="/" class="link"><i class="icon-paypal mr-3"></i>Faire un don</a></li>
+                
+                <div class="switch mt-5 link">
+                    <label>
+                      <i class="icon-brightness_2 icon-2 mr-3"></i><span class="title">Jour</span>
+                      <input type="checkbox">
+                      <span class="lever"></span>
+                    </label>
                 </div>
-                <div class="text-center" style="position:relative; margin-bottom:-70px;">
-                    <img src="images/slider-moc-2-1.png" width="700" alt="">
+            </ul>
+        </nav>
+        <div class="mt-5">
+            <div class="ml-5 border-top"></div>
+            <li class="pl-3 mt-3 list-unstyled"><a href="/" class="link"><i class="icon-help mr-3"></i>Aide et commentaires</a></li>
+            <li class="pl-3 mt-3 list-unstyled"><a href="/" class="link"><i class="icon-user mr-3"></i>Feedback</a></li>
+        </div>
+    </div>
+    <div class="col-lg-4 m-auto">
+        <div>
+            <div class="pr-3 pl-3 pt-lg-4 pt-1 bg-white rounded-top row m-flex-center text-right">
+                <a href="/" class="p-2 text-dark mr-3"><i class="icon-arrow-left"></i></a>
+                <h5 class="mr-auto text-dark">assistant</h5>
+                <a id="sidebarmenu" class="text-dark send-2"><i class="icon-more_vert"></i></a>
+            </div>
+            <div  class="chat-bg col-lg-4 col-md-9 m-auto " style="height:100%; left:0; right:0; position:fixed;">
+                <div  class="chat scrollbar-black scroller pt-3 pb-3 pr-0" id="messages" style="height:77%;">
+                    <audio id="audio" class="d-none" src="audio/msg-left.mp3" controls></audio>
+                </div>
+            </div>
+            <div class="bg-white" style="position: fixed; bottom:0; padding-bottom:20px; right:0; left:0; text-justify:auto;">
+                <div class="col-lg-4 col-md-8 m-auto row m-flex-center pr-lg-4 pl-lg-4 pl-3 pr-3">
+                    <a href="" class="send-2 text-dark-2"><i class="icon-thermometer"></i></a>
+                    <form class="bg-white rounded-3 col-lg-9 col-10 m-auto shadow-md row m-flex-center">
+                        <input autocomplete="off" id="message" name="message" class="chat-form col-9" placeholder="Taper un message...">
+                        <button style="margin-right:-20px !important;" class="btn-floating btn-light shadow-none "><i class="icon-send2 text-primary-2"></i></button>
+                        <div class="d-none">
+                            <a href="" class=""><i class="icon-timer send-2 text-dark-2"></i></a>
+                            <button  class="btn-light btn-floating"><i class="icon-microphone text-primary-2 send"></i></button>
+                            <a href="" class=""><i class="icon-keyboard text-dark-2 send-2"></i></a>
+                        </div>
+                    </form>
+                    <a href="" class="send-2 text-dark-2 mr-lg-2"><i class="icon-twitter"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<%- include('partials/applications') %>
-<%- include('partials/features') %>
-<%- include('partials/symptomes') %>
-<%- include('partials/routine') %>
-<%- include('partials/advice') %>
-<div class="fixed-action-btn">
-    <div class="m-flex-center notification">10</div>
-    <a href="/assistant" title="Chat" class="btn-floating shadow-lg bg-white btn-lg" style="z-index:1; position:relative;">
-      <i class="icon-chat text-primary"></i>
-    </a>
-    <div class="spinner-grow" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-</div>
-<%- include('partials/footer') %>
-<%- include('partials/scripts') %>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script src="js/chat.js"></script>
+
+<%- include('./partials/scripts') %>
