@@ -1,8 +1,7 @@
 const responses = require('../bot/chat')
 
 function tweets (){
-    var welcomsg = ""
-    welcomsg = responses.features.tweets[Math.floor(Math.random() * responses.features.tweets.length)]
+    var welcomsg = responses.features.tweets[Math.floor(Math.random() * responses.features.tweets.length)]
     
     return welcomsg
 }

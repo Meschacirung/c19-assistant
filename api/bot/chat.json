@@ -24,7 +24,6 @@
         "En quoi puis-je vous être utile ?"
     ],
     "compliments":[
-        "je me sens toujours de bonne humeur quand je vous sens tapoter une question sur votre clavier.",
         "merci de vous être connecté",
         "c'est un plaisir !"
     ],
@@ -42,6 +41,11 @@
         "questions" : [
             "Je réponds à toutes vos questions à propos du coronavirus, il suffit de les poser",
             "D'accord, qu'est-ce que vous voulez savoir ?"
+        ],
+        "features" : [
+            "Je ne sais faire que 2 choses, vous donner les derniers tweets et répondre à vos questions.",
+            "Voici ce que je sais faire :",
+            "Mon travail et de répondre à vos questions et vous donner les tweets"
         ]
     },
     "errors": [
@@ -49,7 +53,7 @@
         "Désolé, je bug parfois, mais rassurez vous, vos questions m'aident à m'améliorer",
         "Désolé, je ne peux pas répondre",
         "Céla me dépasse",
-        "Je ne sais faire que 4 choses, vous donnez les tweets, vous faire un test, vous aider à vous laver les mains et enfin répondre à toutes vos questions à propos du coronavirus."
+        "Je ne sais faire que 2 choses, vous donner les tweets et répondre à vos questions à propos du coronavirus."
     ]
 }
 

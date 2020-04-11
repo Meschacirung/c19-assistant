@@ -1,28 +1,29 @@
-const greeting = require('./features/greeting')
-const welcome= require ('./features/welcome')
-const thanks = require('./features/thanks')
-const tweets = require ('./features/tweets')
-const questions = require ('./features/questions')
-const errors = require ('./features/errors')
+const greeting = require('./features/greeting');
+const welcome= require ('./features/welcome');
+const thanks = require('./features/thanks');
+const tweets = require ('./features/tweets');
+const features = require ('./features/features');
+const questions = require ('./features/questions');
+const errors = require ('./features/errors');
 
 const chat = io =>{
     io.on('connection', function(socket){
-        socket.emit('bot message', welcome)
-        socket.emit('bot features')
+        socket.emit('bot message', welcome);
+        socket.emit('bot features');
         socket.on('user message', function(msg){
             io.emit('user message', msg);
-            msg = msg.toLowerCase()
+            msg = msg.toLowerCase();
 
             if (msg.includes('hello') || (msg.includes('bonjour')) || (msg.includes('salut')) || (msg.includes('bonsoir'))){
-                socket.emit('bot message', greeting)
+                socket.emit('bot message', greeting);
             } 
             
             else if (msg.includes('merci') || (msg.includes('cool')) || (msg.includes('bon'))){ 
                 socket.emit('bot message', thanks);
             }
 
-            else if (msg.includes('sais faire') || (msg.includes('fais quoi')) || (msg.includes('fonctionnalités')) || (msg.includes('peu faire'))){ 
-                socket.emit('bot message', 'Voici mes fonctionnalités, elles ne sont que deux :');
+            else if (msg.includes('sais faire') || (msg.includes('fais quoi')) || (msg.includes('fonctionnalité')) || (msg.includes('fonctionnalités')) || (msg.includes('peu faire'))){ 
+                socket.emit('bot message', features);
                 socket.emit('bot features');
             }
             

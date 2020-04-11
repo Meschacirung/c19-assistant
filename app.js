@@ -6,8 +6,8 @@ const io = require('socket.io')(http);
 
 const routes = require('./routes/index');
 
-const bot = require('./api/bot')
-bot.chat(io)
+const bot = require('./api/bot');
+bot.chat(io);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
