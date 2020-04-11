@@ -35,15 +35,11 @@ var sidebar = document.querySelector("#sidebar")
 var sidewrapper = document.querySelector(".sidebar-wrapper")
 
 menulauncher.addEventListener('click', function() {
-  sidewrapper.style.display = "block"
-  sidebar.style.margin="0"
-
-  menulauncher.remove('<i class="icon-more_vert"></i>')
-  menulauncher.append('<i class="icon-close"></i>');
+  sidewrapper.style.display = "block";
+  sidebar.style.marginLeft="0";
 });
 
 sidewrapper.addEventListener('click', function(){
-  menulauncher.append('<i class="icon-more_vert"></i>');
   sidewrapper.style.display = "none"
   sidebar.style.marginLeft="-100%"
 })

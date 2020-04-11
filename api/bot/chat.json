@@ -39,18 +39,9 @@
             "Voici les derniers tweets de l'I N R B et l'O M S R D C",
             "L'institut national de recherches biomédical a twitté :"
         ],
-        "handwash" : [
-            "Okay, je vais lancer un chrono de 30 sécondes pour vous aider à vous lavez les mains",
-            "Je joue un morceau pour vous aider à vous lavez les mains"
-        ],
         "questions" : [
             "Je réponds à toutes vos questions à propos du coronavirus, il suffit de les poser",
             "D'accord, qu'est-ce que vous voulez savoir ?"
-        ],
-        "Test" : [
-            "Je ne suis pas médecin mais je connais les symtômes du coronavirus donc, je peux vous aider.",
-            "D'accord, parlons de vos symptômes",
-            "Dites moi ce que vous ressentez :"
         ]
     },
     "errors": [

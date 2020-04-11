@@ -5,7 +5,6 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
 const routes = require('./routes/index');
-const assistant = require('./routes/assistant');
 
 const bot = require('./api/bot')
 bot.chat(io)
@@ -16,7 +15,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/assistant', assistant);
 
 if(app.get('env')=== 'development'){
     app.use(function(err, req, res, next){
