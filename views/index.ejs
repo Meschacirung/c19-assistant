@@ -1,5 +1,33 @@
 <%- include('./partials/head') %>
 <style>
+    .saving .span {
+        color: #bebebe;
+        animation-name: blink;
+        animation-duration: 1.8s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+        font-size:60px;
+        margin-right:-2px;
+    }
+
+    .saving .span2{
+        animation-delay: .2s;
+    }
+
+    .saving .span3{
+        animation-delay: .4s;
+    }
+    @keyframes blink {
+        0% {
+            opacity:.2;
+        }
+        20% {
+            opacity:1;
+        }
+        100%{
+            opacity:2;
+        }
+    }
     #sidebarmenu{
         cursor: pointer;
     }
@@ -10,7 +38,7 @@
         height:100%;
         background: #ffffff;
         box-shadow: 0 0px 30px #1d1d1d38;
-        animation: ease sidebar 4s;
+        animation: ease sidebar .5s;
         margin-left:-100%;
     }
     .sidebar-wrapper{
@@ -148,7 +176,7 @@
                 <a  class="text-dark send-2"><i class="icon-more_vert"></i></a>
             </div>
             <div  class="chat-bg col-lg-4 col-md-9 m-auto " style="height:100%; left:0; right:0; position:fixed;">
-                <div  class="chat scrollbar-black scroller pt-3 pb-3 pr-0" id="messages" style="height:77%;">
+                <div  class="chat scrollbar-black scroller pt-3 pb-3 pr-0" id="messages" style="height:77%;">                   
                     <audio id="audio" class="d-none" src="audio/msg-left.mp3" controls></audio>
                 </div>
             </div>

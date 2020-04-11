@@ -13,8 +13,6 @@ $(function () {
         return false;
     });
     socket.on('bot message', function(msg){
-        msgleft.play()
-        
         setTimeout(function(){
             function textToSpeech() {
                 var available_voices = window.speechSynthesis.getVoices();
@@ -51,13 +49,14 @@ $(function () {
                     ${msg}
                 </span>
             </span>`));
+            msgleft.play()
         chatsection.scrollTop += 20000;
         }.bind(this), 290);   
     });
     socket.on('bot features', function(msg){
         setTimeout(function(){
             $('#messages').append($(`
-            <div class="bg-white msg-1 mt-3 p-2 pt-4 ml-1 mr-1 shadow-sm-2 rounded-2">
+            <div class="bg-white msg-1 mt-3 p-2 pb-4 pt-4 ml-1 mr-1 shadow-sm-2 rounded-2">
                 <a href="" class="pt-2 pb-2 pl-4 pr-4  text-dark bg-primary-3 rounded-3 shadow-none"><i class="icon-twitter text-primary"></i> Tweets</a>
                 <a href="" class="pt-2 pb-2 pl-4 pr-4  text-dark bg-primary-3 rounded-3 shadow-none"><i class="icon-question text-default"></i> Questions</a> <br class="mb-4">
                 </div>`));

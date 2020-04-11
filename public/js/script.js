@@ -17,19 +17,6 @@ $('.smooth-scroll').on('click', 'a', function () {
   }
 });
 
-const countDownDate = new Date("Apr 2, 2021 13:55:25").getTime();
-const interval = setInterval(function(){
-  const now = new Date().getTime();
-  const distance = countDownDate - now;
-
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000 ) ;
-
-  document.getElementById("timer").innerHTML = seconds;
-  if (seconds < 10){
-    document.getElementById("timer").innerHTML = "0" + seconds
-  }
-}, 1000)
-
 var menulauncher = document.querySelector("#sidebarmenu")
 var sidebar = document.querySelector("#sidebar")
 var sidewrapper = document.querySelector(".sidebar-wrapper")
@@ -40,6 +27,6 @@ menulauncher.addEventListener('click', function() {
 });
 
 sidewrapper.addEventListener('click', function(){
-  sidewrapper.style.display = "none"
-  sidebar.style.marginLeft="-100%"
+  sidewrapper.style.display = "none";
+  sidebar.style.marginLeft="-100%";
 })
