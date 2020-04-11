@@ -1,33 +1,34 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+var express = require('express');
+var app = express();
+var path = require('path');
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
 
-const routes = require('./routes/index');
+var routes = require('./routes/index');
 
-const bot = require('./api/bot');
+var bot = require('./api/bot');
 bot.chat(io);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', routes);
 
-app.disable('etag')
+app.disable('etag');
 
-if(app.get('env')=== 'development'){
-    app.use(function(err, req, res, next){
-        res.status(err.status || 500);
-        res.render('500', 'error', {
-            message:err.message,
-            error:err
-        });
-    });
-};
+app.use(function(req, res, next) {
+    next(createError(404));
+    res.render('404');
+});
 
-http.listen(3000, ()=>{
-    console.log('Example listening on port 3000!');
-})
+app.use(function(err, req, res, next) {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    res.status(err.status || 500);
+    res.render('500');
+});
+
+module.exports = app;
+module.exports = io;

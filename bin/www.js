@@ -1,44 +1,63 @@
 #!/usr/bin/env node
 
-const app = require ('../app');
-const debug = require ('debug')('src');
-const http = require('http')
+var app = require('../app');
+var debug = require('debug')('c19-assistant:server');
+var http = require('http');
+var io = require('socket.io')(http);
 
-const port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-const server = http.creatServer(app);
+var server = http.createServer(app);
 
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-function normalizePort(val){
-    var port = parseInt(val, 10);
+function normalizePort(val) {
+  var port = parseInt(val, 10);
 
-    if (isNaN(port)){
-        return val
-    }
+  if (isNaN(port)) {
+    return val;
+  }
 
-    if (port >= 0){
-        return port;
-    }
-    return false
+  if (port >= 0) {
+    return port;
+  }
+
+  return false;
 }
 
-function onError(error){
-    if (error.syscall !== 'listen'){
-        throw error;
-    }
-    var bind = typeof port == 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
-    switch (error.code){
-        case 'EACCES':
-            console.error(bind + 'requires elevated  privileges');
-            process.exit(1);
-            break;
-        case 'EADDRINUSE':
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
 
-    }
+var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+var bot = require('../api/bot');
+bot.chat(io);
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
 }

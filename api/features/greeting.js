@@ -1,4 +1,4 @@
-const responses = require('../bot/chat');
+var responses = require('../bot/chat');
 
 function greeting () {
     var greeting = "";

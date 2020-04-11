@@ -1,12 +1,12 @@
-const greeting = require('./features/greeting');
-const welcome= require ('./features/welcome');
-const thanks = require('./features/thanks');
-const tweets = require ('./features/tweets');
-const features = require ('./features/features');
-const questions = require ('./features/questions');
-const errors = require ('./features/errors');
+var greeting = require('./features/greeting');
+var welcome= require ('./features/welcome');
+var thanks = require('./features/thanks');
+var tweets = require ('./features/tweets');
+var features = require ('./features/features');
+var questions = require ('./features/questions');
+var errors = require ('./features/errors');
 
-const chat = io =>{
+var chat = io =>{
     io.on('connection', function(socket){
         socket.emit('bot message', welcome);
         socket.emit('bot features');
