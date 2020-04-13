@@ -1,124 +1,4 @@
 <%- include('./partials/head') %>
-<style>
-    .saving .span {
-        color: #bebebe;
-        animation-name: blink;
-        animation-duration: 1.8s;
-        animation-iteration-count: infinite;
-        animation-fill-mode: both;
-        font-size:60px;
-        margin-right:-2px;
-    }
-
-    .saving .span2{
-        animation-delay: .2s;
-    }
-
-    .saving .span3{
-        animation-delay: .4s;
-    }
-    @keyframes blink {
-        0% {
-            opacity:.2;
-        }
-        20% {
-            opacity:1;
-        }
-        100%{
-            opacity:2;
-        }
-    }
-    #sidebarmenu{
-        cursor: pointer;
-    }
-    .sidebar{
-        position: fixed;
-        z-index:1900;
-        width:80%;
-        height:100%;
-        background: #ffffff;
-        box-shadow: 0 0px 30px #1d1d1d38;
-        animation: .2s;
-        left:-100%;
-    }
-    .sidebar-wrapper{
-        background: #53535d49;
-        position: absolute;
-        height:100vh;
-        width:100vw;
-        z-index:1899;
-        animation: ease fade .3s;
-        display: none;
-    }
-    @keyframes fade{
-        0%{
-            opacity: -1;
-        }
-        100%{
-            opacity: 2;
-        }
-    }
-    @keyframes sidebar {
-        0%{
-            margin-left: -100%;
-        };
-        75%{
-            margin-left: -36%;
-        };
-        100%{
-            margin-left : 0px;
-        }
-
-    }
-    .splash{
-        background: #ffffff;
-        height:100vh;
-        width: 100vw;
-        position:fixed;
-        z-index:999;
-        animation:hide .2s 1.7s ease forwards;
-    }
-    .link {
-        margin-top:30px;
-        font-weight:300;
-        font-size:17px;
-        color: #5d5d5d !important;
-    }
-    .link:hover{
-        color:#343638 !important;
-        font-weight: 600;
-        transition: ease .1s;
-    }
-    .logo{
-        position: fixed;
-        bottom:35%;
-        text-align: center;
-        left:0;
-        right: 0;
-        z-index:1000;
-        background: #ffffff;
-        animation:hide .5s 1.5s ease forwards;
-    }
-    .powered{
-        position: fixed;
-        bottom:5%;
-        text-align: center;
-        left:0;
-        right: 0;
-        z-index:1000;
-        animation:hide 1s 1.2s ease forwards;
-    }
-    
-    @keyframes hide {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        z-index: -1000;
-      }
-    }
-  </style>
 <div>
     <span id="splash" class="splash"></span>
     <div class="logo">
@@ -150,7 +30,7 @@
         <nav class="pl-3 pr-3 pt-4">
             <ul class="list-unstyled">
                 <li><a href="" class="link"><i class="icon-gear mr-3"></i>Options</a></li>
-                <li class="mt-3"><a href="" class="link"><i class="icon-github mr-3"></i>Contribuer</a></li>
+                <li class="mt-3"><a target="outblank" href="https://github.com/Meschacirung/c19-assistant/trees/chatbot" class="link"><i class="icon-github mr-3"></i>Contribuer</a></li>
                 <li class="mt-3"><a href="" class="link"><i class="icon-paypal mr-3"></i>Faire un don</a></li>
                 
                 <div class="switch mt-5 link">
@@ -168,46 +48,6 @@
             <li class="pl-3 mt-3 list-unstyled"><a href="" class="link"><i class="icon-user mr-3"></i>Feedback</a></li>
         </div>
     </div>
-    <style>
-        .darkmode{
-            background: #141d26 !important;
-            color: #f1f1f1 !important;
-        }
-        .darkmode .tab{
-            background: #263747 !important;
-            color: #f1f1f1 !important;
-        }
-        .darkmode input{
-            background: #141d26;
-            color: #f1f1f1;
-        }
-        .darkmode .sidebar-wrapper{
-            background: #1f2d3ba6 !important;
-            color: #f1f1f1;
-        }
-        .darkmode {
-            color: #f1f1f1 !important;
-        }
-        .darkmode a {
-            color: #dfdfdf !important;
-        }
-        .darkmode a :hover{
-            color: #bebebe !important;
-        }
-        .darkmode span{
-            background: #243447 !important;
-            color: #f1f1f1;
-            border: none !important;
-        }
-        .darkmode .features{
-            background: #131b25 !important;
-        }
-        .msg-darkmode{
-            background: #243447 !important;
-            border: none !important;
-        }
-
-    </style>
     <div class="col-lg-4 m-auto">
         <div>
             <div class="tab pr-3 pl-3 pt-lg-4 pt-1 bg-white rounded-top row m-flex-center text-right">
