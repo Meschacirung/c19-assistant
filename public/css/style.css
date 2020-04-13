@@ -1,5 +1,5 @@
 body{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Rubik', sans-serif;
   overflow-x: hidden;
 }
 a:hover{
@@ -67,7 +67,7 @@ button{
   background: #0092c2 !important;
 }
 .bg-primary-2{
-  background: #6163cf !important;
+  background: #585af5 !important;
 }
 .text-primary-2{
   color: #585af5 !important;
@@ -571,7 +571,7 @@ opacity:0.9;
     .switch label input[type=checkbox]:checked + .lever {
       background-color: #dccfe2; }
     .switch label input[type=checkbox]:checked + .lever:after {
-      background-color: #236bf1;
+      background-color: #585af5;
       left: 1.5rem; }
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever:active:after {
       -webkit-box-shadow: 0 0.0625rem 0.1875rem 0.0625rem rgba(0, 0, 0, 0.4), 0 0 0 0.9375rem rgba(170, 102, 204, 0.1);
@@ -660,6 +660,9 @@ opacity:0.9;
   transition: .3s;
   left:-100% !important;
 }
+.sidebar li{
+  transition: .4s;
+}
 @media(max-width:576px){
   .sidebar{
     width:80%;
@@ -684,7 +687,10 @@ opacity:0.9;
 .unactive-wrapper{
   display:none;
 }
-
+.rounded-5bottom{
+  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 5%;
+}
 .sidebar-wrapper{
   background: #53535d49;
   position: absolute;
@@ -725,7 +731,7 @@ opacity:0.9;
 .link {
   margin-top:30px;
   font-weight:300;
-  font-size:17px;
+  font-size:20px;
   color: #5d5d5d !important;
 }
 .link:hover{
@@ -767,6 +773,18 @@ opacity:0.9;
   background: #141d26 !important;
   color: #f1f1f1 !important;
 }
+.darkmode .title{
+  background: transparent !important;
+  color: #f1f1f1 !important;
+}
+.darkmode .header{
+  background: #6163cf !important;
+  color: #f1f1f1 !important;
+}
+.darkmode .avatar{
+  background: #ffffff !important;
+  color: #f1f1f1 !important;
+}
 .darkmode .tab{
   background: #263747 !important;
   color: #f1f1f1 !important;
@@ -777,6 +795,10 @@ opacity:0.9;
 }
 .darkmode .sidebar-wrapper{
   background: #1f2d3ba6 !important;
+  color: #f1f1f1;
+}
+.darkmode .sidebar-wrapper{
+  background: #1c2835;
   color: #f1f1f1;
 }
 .darkmode {

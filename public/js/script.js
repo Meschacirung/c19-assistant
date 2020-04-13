@@ -52,11 +52,13 @@ $("#darkmode").change(function(){
       $('button').addClass("bg-primary-2");
       $('i').removeClass("text-primary-2");
       $('i').addClass("text-white");
+      $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle').addClass("text-primary-2");
       $('.features').addClass("msg-darkmode");
+      $('.avatar').addClass("bg-white");
+      $('path').attr('fill', '#6163cf');
+      $('.title').text('Nuit');
     }
   }else{
-    $('div').addClass("bg-white");
-      $('div').addClass("bg-light");
       $('h5').addClass("text-dark");
       $('div').removeClass("darkmode");
       $('input').removeClass("darkmode");
@@ -67,5 +69,7 @@ $("#darkmode").change(function(){
       $('.icon-send2').addClass("text-primary-2");
       $('i').removeClass("text-white");
       $('.features').removeClass("msg-darkmode");
+      $('path').attr('fill', '#585af5');
+      $('.title').text('Jour');
   }
 })

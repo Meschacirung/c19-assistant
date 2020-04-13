@@ -43,7 +43,7 @@ $(function () {
             $('#messages').append($(`
             <div class="msg mt-2">
                 <div>
-                    <img src="images/mocgen.png" width="30" alt="" class="img-fluid">
+                    <img src="images/chatbot-avatar.png" alt="" class="img-fluid">
                 </div>
                 <span class="msg-left mt-2">
                     ${msg}
