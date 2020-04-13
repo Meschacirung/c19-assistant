@@ -1,5 +1,5 @@
-var chatsection = document.querySelector("#messages")
-var msgleft = document.querySelector("#audio")
+var chatsection = document.querySelector("#messages");
+var msgleft = document.querySelector("#audio");
 var socket = io();
 
 $(function () {
@@ -28,7 +28,7 @@ $(function () {
             
     
                 var utter = new SpeechSynthesisUtterance();
-                utter.rate = 1.2;
+                utter.rate = 1.5;
                 utter.pitch = 1;
                 utter.text = msg;
                 utter.voice = french_voice;
@@ -41,33 +41,33 @@ $(function () {
             }
             textToSpeech()
             $('#messages').append($(`
-            <span class="msg mt-2">
+            <div class="msg mt-2">
                 <div>
                     <img src="images/mocgen.png" width="30" alt="" class="img-fluid">
                 </div>
                 <span class="msg-left mt-2">
                     ${msg}
                 </span>
-            </span>`));
-            msgleft.play()
+            </div>`));
+            msgleft.play();
         chatsection.scrollTop += 20000;
         }.bind(this), 290);   
     });
     socket.on('bot features', function(msg){
         setTimeout(function(){
             $('#messages').append($(`
-            <div class="bg-white msg-1 mt-3 p-2 pb-4 pt-4 ml-1 mr-1 shadow-sm-2 rounded-2">
+            <div class="bg-white features msg-1 mt-3 p-2 pb-4 pt-4 ml-1 mr-1 shadow-sm-2 rounded-2">
                 <a href="" class="pt-2 pb-2 pl-4 pr-4  text-dark bg-primary-3 rounded-3 shadow-none"><i class="icon-twitter text-primary"></i> Tweets</a>
                 <a href="" class="pt-2 pb-2 pl-4 pr-4  text-dark bg-primary-3 rounded-3 shadow-none"><i class="icon-question text-default"></i> Questions</a> <br class="mb-4">
-                </div>`));
+            </div>`));
         chatsection.scrollTop += 20000;
         }.bind(this), 291);
         
     });
     socket.on('user message', function(msg){
         $('#messages').append($(`
-        <span class="msg mt-2">
-            <span class="text-right">
+        <div class="msg mt-2">
+            <div class="text-right">
                 <div class="text-right">
                     <div style="margin-bottom:-7px">
                         <h2 class="text-primary-2">
@@ -78,8 +78,8 @@ $(function () {
                     ${msg}
                     </span>
                 </div>
-            </span>
-        </span>`));
+            </div>
+        </div>`));
         chatsection.scrollTop += 200000;
     });
 });

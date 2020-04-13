@@ -23,10 +23,43 @@ var sidewrapper = document.querySelector(".sidebar-wrapper")
 
 menulauncher.addEventListener('click', function() {
   sidewrapper.style.display = "block";
-  sidebar.style.marginLeft="0";
+  sidebar.style.left="0";
 });
 
 sidewrapper.addEventListener('click', function(){
   sidewrapper.style.display = "none";
-  sidebar.style.marginLeft="-100%";
+  sidebar.style.left="-100%";
+});
+
+/* darkmode */
+$("#darkmode").change(function(){
+  if(this.checked === true){
+    if($('div').hasClass("bg-white") || $('div').hasClass("bg-light")) {
+      $('div').removeClass("bg-white");
+      $('div').removeClass("bg-light");
+      $('h5').removeClass("text-dark");
+      $('div').addClass("darkmode");
+      $('input').addClass("darkmode");
+      $('.msg-left').addClass("msg-darkmode");
+      $('.msg-right').addClass("msg-darkmode");
+      $('form').addClass("darkmode");
+      $('button').addClass("bg-primary-2");
+      $('i').removeClass("text-primary-2");
+      $('i').addClass("text-white");
+      $('.features').addClass("msg-darkmode");
+    }
+  }else{
+    $('div').addClass("bg-white");
+      $('div').addClass("bg-light");
+      $('h5').addClass("text-dark");
+      $('div').removeClass("darkmode");
+      $('input').removeClass("darkmode");
+      $('.msg-left').removeClass("msg-darkmode");
+      $('.msg-right').removeClass("msg-darkmode");
+      $('form').removeClass("darkmode");
+      $('button').removeClass("bg-primary-2");
+      $('.icon-send2').addClass("text-primary-2");
+      $('i').removeClass("text-white");
+      $('.features').removeClass("msg-darkmode");
+  }
 })
