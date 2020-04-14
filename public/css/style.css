@@ -699,7 +699,7 @@ opacity:0.9;
 }
 @media(max-width:576px){
   .sidebar{
-    width:90%;
+    width:85%;
   }
   .aboutpage{
     width: 100% !important;

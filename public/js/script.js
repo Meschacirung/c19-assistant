@@ -53,8 +53,7 @@ backlauncher.addEventListener('click', function(){
   $('.sidebar').removeClass("aboutpage");
   $('.navcontent').removeClass("abpage");
   $('.abcontent').removeClass("abc-active");
-  $('.htitle').text("Covid");
-  $('.stitle').text("Bot");
+  $('.htitle').text("CovidBot");
   $('.homeback').removeClass("homebactive");
   $('.sidebar').removeClass("activeted");
   $('.sidebar-wrapper').removeClass("activeted-wrapper");
@@ -67,8 +66,7 @@ menuback.addEventListener('click', function(){
   $('.sidebar').removeClass("aboutpage");
   $('.navcontent').removeClass("abpage");
   $('.abcontent').removeClass("abc-active");
-  $('.htitle').text("Covid");
-  $('.stitle').text("Bot");
+  $('.htitle').text("CovidBot");
   $('.homeback').removeClass("homebactive");
   $('.menuback').removeClass("menubactive");
 });
@@ -88,7 +86,7 @@ $("#darkmode").change(function(){
       $('button').addClass("bg-primary-2");
       $('i').removeClass("text-primary-2");
       $('i').addClass("text-white");
-      $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle').addClass("text-primary-2");
+      $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle, .icon-linkedin, .icon-mail_outline').addClass("text-primary-2");
       $('.features').addClass("msg-darkmode");
       $('.avatar').addClass("bg-white");
       $('path').attr('fill', '#6163cf');
@@ -107,6 +105,6 @@ $("#darkmode").change(function(){
       $('.features').removeClass("msg-darkmode");
       $('path').attr('fill', '#585af5');
       $('.title').text('Mode jour');
-      $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle').removeClass("text-primary-2");
+      $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle, .icon-linkedin, .icon-mail_outline').removeClass("text-primary-2");
   }
 })
