@@ -37,6 +37,42 @@ function sidebar(){
 
 sidebar()
 
+/* About page */
+var aboutlauncher = document.querySelector("#about");
+aboutlauncher.addEventListener('click', function(){
+  $('.sidebar').addClass("aboutpage");
+  $('.navcontent').addClass("abpage");
+  $('.abcontent').addClass("abc-active");
+  $('.htitle').text("A Propos");
+  $('.homeback').addClass("homebactive");
+  $('.menuback').addClass("menubactive");
+});
+
+var backlauncher = document.querySelector(".homeback");
+backlauncher.addEventListener('click', function(){
+  $('.sidebar').removeClass("aboutpage");
+  $('.navcontent').removeClass("abpage");
+  $('.abcontent').removeClass("abc-active");
+  $('.htitle').text("Covid");
+  $('.stitle').text("Bot");
+  $('.homeback').removeClass("homebactive");
+  $('.sidebar').removeClass("activeted");
+  $('.sidebar-wrapper').removeClass("activeted-wrapper");
+  $('.menuback').removeClass("menubactive");
+});
+
+var menuback = document.querySelector('.menuback');
+
+menuback.addEventListener('click', function(){
+  $('.sidebar').removeClass("aboutpage");
+  $('.navcontent').removeClass("abpage");
+  $('.abcontent').removeClass("abc-active");
+  $('.htitle').text("Covid");
+  $('.stitle').text("Bot");
+  $('.homeback').removeClass("homebactive");
+  $('.menuback').removeClass("menubactive");
+});
+
 /* darkmode */
 $("#darkmode").change(function(){
   if(this.checked === true){
@@ -56,9 +92,9 @@ $("#darkmode").change(function(){
       $('.features').addClass("msg-darkmode");
       $('.avatar').addClass("bg-white");
       $('path').attr('fill', '#6163cf');
-      $('.title').text('Nuit');
+      $('.title').text('Mode sombre');
     }
-  }else{
+  }else if (this.checked === false){
       $('h5').addClass("text-dark");
       $('div').removeClass("darkmode");
       $('input').removeClass("darkmode");
@@ -70,6 +106,7 @@ $("#darkmode").change(function(){
       $('i').removeClass("text-white");
       $('.features').removeClass("msg-darkmode");
       $('path').attr('fill', '#585af5');
-      $('.title').text('Jour');
+      $('.title').text('Mode jour');
+      $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle').removeClass("text-primary-2");
   }
 })

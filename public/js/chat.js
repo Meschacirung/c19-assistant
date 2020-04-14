@@ -28,14 +28,14 @@ $(function () {
             
     
                 var utter = new SpeechSynthesisUtterance();
-                utter.rate = 1.5;
-                utter.pitch = 1;
+                utter.rate = 1.3;
+                utter.pitch = 1.1;
                 utter.text = msg;
                 utter.voice = french_voice;
     
                 utter.onend = function() {
-                    console.log('speech onend')
-                }
+                    console.log('speech onend');
+                };
     
                 window.speechSynthesis.speak(utter);
             }
@@ -56,7 +56,7 @@ $(function () {
     socket.on('bot features', function(msg){
         setTimeout(function(){
             $('#messages').append($(`
-            <div class="bg-white features msg-1 mt-3 p-2 pb-4 pt-4 ml-1 mr-1 shadow-sm-2 rounded-2">
+            <div class="bg-white features msg-1 mt-3 p-2 pb-2 pt-4 ml-1 mr-1 shadow-sm-2 rounded-2">
                 <a href="" class="pt-2 pb-2 pl-4 pr-4  text-dark bg-primary-3 rounded-3 shadow-none"><i class="icon-twitter text-primary"></i> Tweets</a>
                 <a href="" class="pt-2 pb-2 pl-4 pr-4  text-dark bg-primary-3 rounded-3 shadow-none"><i class="icon-question text-default"></i> Questions</a> <br class="mb-4">
             </div>`));

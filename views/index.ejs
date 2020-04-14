@@ -1,60 +1,7 @@
 <%- include('./partials/head') %>
 <div>
-    <span id="splash" class="splash"></span>
-    <div class="logo">
-        <img src="images/chatsplsh.png" width="250" alt="" class="img-fluid">
-    </div>
-    <div class="powered">
-        <span class="text-dark-2">Powered By</span>
-        <a href=""><h3 class="text-center text-dark-2">Méschac iRUNG</h3></a>
-        <hr class="hr">
-    </div>
-    <div class="sidebar-wrapper">
-        
-    </div>
-    <div class="sidebar" id="sidebar">
-        <div class="header alt2 bg-primary-2 pl-3 pr-3 pt-5  pb-1">
-            <div class="header text-center">
-                <div class="avatar col-3 m-auto bg-white p-3 shadow-md rounded-3 text-center">
-                    <a>
-                        <i class="icon-face send text-dark"></i>
-                    </a>
-                </div>
-                <div class="header text-center mt-3">
-                    <h2 class="mr-auto text-white  font-weight-bold">Covid<span class="header font-weight-normal text-dark-2">Bot</span></h2>
-                </div>
-            </div>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#585af5" fill-opacity="1" d="M0,192L60,176C120,160,240,128,360,149.3C480,171,600,245,720,277.3C840,309,960,299,1080,261.3C1200,224,1320,160,1380,128L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-          </svg>
-        <nav>
-            <ul class="pt-5 p-3 list-unstyled">
-                <li><a href="" class="link"><i class="icon-gear mr-3 text-primary-2"></i>Options</a></li>
-                <li class="mt-4"><a target="outblank" href="https://github.com/Meschacirung/c19-assistant/tree/chatbot" class="link"><i class="icon-github mr-3 text-primary-2"></i>Contribuer </a></li>
-                <li class="mt-4"><a href="" class="link"><i class="icon-exclamation-circle mr-3 text-primary-2"></i>A Propos</a></li>
-                
-                <div class="switch mt-4 link">
-                    <label>
-                      <i class="icon-brightness_2 icon-2 mr-3 text-primary-2"></i><span class="title">Jour</span>
-                      <input id="darkmode" type="checkbox">
-                      <span class="lever"></span>
-                    </label>
-                </div>
-            </ul>
-        </nav>
-
-        <div style="margin-top:60%;">
-            <div>
-                <div class="col-11 ml-auto border-top">
-                    
-                </div>
-                <div class="p-3 text-center">
-                    <p class="text-dark-2">*** CovidBot 2020 ***</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%- include('./partials/splashscreen') %>
+    <%- include('./partials/sidebar') %>
     <div class="col-lg-4 m-auto">
         <div>
             <div class="tab pr-3 pl-3 pt-lg-4 pt-1 bg-white rounded-top row m-flex-center text-right">
