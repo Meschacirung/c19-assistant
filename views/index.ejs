@@ -4,12 +4,13 @@
     <%- include('./partials/sidebar') %>
     <div class="col-lg-4 m-auto">
         <div>
-            <div class="tab pr-3 pl-3 pt-lg-4 pt-1 bg-white rounded-top row m-flex-center text-right">
+            <div class="tab pr-3 pl-3 pt-lg-4 mb-3 pt-1 bg-white rounded-top row m-flex-center text-right">
                 <h4 class="mr-auto text-primary-2 font-weight-bold">Covid<span class="font-weight-normal text-dark-2">Bot</span></h4>
                 <a id="sidebarmenu" class="p-2 text-dark"><i class="icon-menu send"></i></a>
             </div>
             <div  class="chat-bg col-lg-4 col-md-9 m-auto " style="height:100%; left:0; right:0; position:fixed;">
                 <div  class="chat scrollbar-black scroller pt-3 pb-3 pr-0" id="messages" style="height:77%;">                   
+                    <%- include('./partials/stories') %>
                     <audio id="audio" class="d-none" src="audio/msg-left.mp3" controls></audio>
                 </div>
             </div>
