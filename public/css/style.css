@@ -840,6 +840,9 @@ opacity:0.9;
   background: transparent !important;
   color: #f1f1f1 !important;
 }
+.darkmode .text-dark{
+  color: #f1f1f1 !important;
+}
 .darkmode .header{
   background: #6163cf !important;
   color: #f1f1f1 !important;

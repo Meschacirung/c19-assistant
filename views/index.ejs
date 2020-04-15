@@ -1,5 +1,4 @@
 <%- include('./partials/head') %>
-<%- include('./partials/story') %>
 <div>
     <%- include('./partials/splashscreen') %>
     <%- include('./partials/sidebar') %>
@@ -34,12 +33,11 @@
     </div>
 </div>
 
-
 <script src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/owl.carousel.js"></script>
 <script>
-    $('.owl-carousel').owlCarousel({
+    $('.owl-one').owlCarousel({
         items:4,
         loop:true,
         center:false,
@@ -74,6 +72,15 @@
                 margin:0,
             },
         }
+    });
+    $('.owl-two').owlCarousel({
+        items:1,
+        loop:true,
+        center:false,
+        margin:0,
+        URLhashListener:true,
+        autoplayHoverPause:false,
+        startPosition: 'URLHash',
     });
 </script>
 <script src="js/chat.js"></script>

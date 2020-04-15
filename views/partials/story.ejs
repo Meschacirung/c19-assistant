@@ -23,11 +23,54 @@
         position: absolute;
         height:80%;
         width:100%;
-        bottom:0;
-        top:20%;
+        top:0;
         right:0;
-        left: 0;
+        left:0;
+        bottom:0;
+    }
+    .story-content-in{
+        margin:auto;
         text-align: center;
+        position: relative;
+    }
+    .like{
+        animation: infinite jump alternate cubic-bezier(0.68, -0.55, 0.265, 1.55) .5s, 1s;
+    }
+    .dislike{
+        animation: infinite down alternate cubic-bezier(0.68, -0.55, 0.265, 1.55) .7s, 1s;
+    }
+    .smile{
+        animation: infinite smile alternate cubic-bezier(0.68, -0.55, 0.265, 1.55) .7s, 1s;
+    }
+    @keyframes jump{
+        0%{
+            margin-top:-5px;
+            rotate:-30deg;
+        };
+        50%{
+            margin-top:-10px;
+            rotate:-60deg;
+        };
+        100%{
+            margin-top:0px;
+            rotate:0deg;
+        }
+    }
+    @keyframes down{
+        0%{
+            margin-top:-8px;
+        };
+        100%{
+            margin-top:0px;
+        }
+    }
+    @keyframes smile{
+        0%{
+            margin-top:-8px;
+        };
+        100%{
+            margin-top:0px;
+        }
     }
 </style>
 
@@ -35,7 +78,7 @@
     <div class="story-header p-3">
         <div class="row m-flex-center">
             <div class="col-1">
-                <a href=""><i class=" icon-keyboard_backspace send-2"></i></a>
+                <a href=""><i class=" icon-keyboard_backspace send-2 text-dark"></i></a>
             </div>
             <div class="ml-1 col-8 row m-flex-center">
                 <div class="col-4">
@@ -47,24 +90,29 @@
                 </div>
             </div>
             <div class="col-2 ml-auto text-center">
-                <a href=""><i class="icon-more_vert send-2"></i></a>
+                <a href=""><i class="icon-more_vert send-2 text-dark"></i></a>
             </div>
         </div>
     </div>
-    <div class="story-content">
-        <div class="text d-none">
-            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore ullam architecto dolore non rerum voluptates fugiat rem officia, dolorum consectetur ex illo natus at placeat omnis adipisci, eum quidem eligendi!</h4>
-        </div>
-        <div class="img-text">
-            <img src="images/story.jpeg" alt="" class="img-fluid">
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, Accusamus id et a libero odit.</p>
+    <div class="story-content-in">
+        <div class="story-content">
+            <div class="owl-two owl-carousel">
+                <div>
+                    <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore ullam architecto dolore non rerum voluptates fugiat rem officia, dolorum consectetur ex illo natus at placeat omnis adipisci, eum quidem eligendi!</h4>
+                </div>
+                <div class="img-text">
+                    <img src="images/mask.jpg" alt="" class="img-fluid">
+                    <p class="mt-4">Amet consectetur adipisicing elit. Nemo, Accusamus id et a libero odit.</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="story-bottom">
         <div class="m-flex-center text-center m-auto">
-            <a href="" class="btn-floating bg-primary-2"><i class="send-2 icon-thumbs-up"></i></a>
-            <a href="" class="btn-floating bg-danger"><i class="send-2 icon-thumbs-down"></i></a>
-            <a href="" class="btn-floating bg-success"><i class="send-2  icon-tag_faces"></i></a>
+            <a href="" class="send-2">&#128525</a>
+            <a href="" class="btn-floating bg-primary-2"><i class="send-2 icon-thumbs-up like"></i></a>
+            <a href="" class="btn-floating bg-danger"><i class="send-2 icon-thumbs-down dislike"></i></a>
+            <a href="" class="send-2">&#128530</a>
         </div>
     </div>
 </div>
