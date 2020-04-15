@@ -1,10 +1,11 @@
 <%- include('./partials/head') %>
+<%- include('./partials/story') %>
 <div>
     <%- include('./partials/splashscreen') %>
     <%- include('./partials/sidebar') %>
     <div class="col-lg-4 m-auto">
         <div>
-            <div class="tab pr-3 pl-3 pt-lg-4 mb-3 pt-1 bg-white rounded-top row m-flex-center text-right">
+            <div class="tab pr-3 pl-3 pt-lg-4 mb-3 pt-4 bg-white rounded-top row m-flex-center text-right">
                 <h4 class="mr-auto text-primary-2 font-weight-bold">Covid<span class="font-weight-normal text-dark-2">Bot</span></h4>
                 <a id="sidebarmenu" class="p-2 text-dark"><i class="icon-menu send"></i></a>
             </div>
@@ -40,12 +41,39 @@
 <script>
     $('.owl-carousel').owlCarousel({
         items:4,
-        loop:false,
+        loop:true,
         center:false,
-        margin:70,
+        margin:10,
         URLhashListener:true,
         autoplayHoverPause:false,
-        startPosition: 'URLHash'
+        startPosition: 'URLHash',
+        responsiveClass : true,
+        responsive :{
+            0:{
+                items :2,
+                nav:true
+            },
+            280:{
+                items : 3,
+                nav:true,
+                margin:50,
+            },
+            360:{
+                items : 4,
+                nav:true,
+                margin:50,
+            },
+            768:{
+                items : 6,
+                nav:true,
+                margin:20,
+            },
+            1000:{
+                items :4,
+                nav:true,
+                margin:0,
+            },
+        }
     });
 </script>
 <script src="js/chat.js"></script>

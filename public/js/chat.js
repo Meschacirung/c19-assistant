@@ -39,7 +39,7 @@ $(function () {
     
                 window.speechSynthesis.speak(utter);
             }
-            textToSpeech()
+            
             $('#messages').append($(`
             <div class="msg mt-2">
                 <div>
