@@ -373,7 +373,7 @@ cursor: pointer; }
   border-radius: 1rem !important;
 }
 .rounded-storie{
-  border-radius: .8rem !important;
+  border-radius: .6rem !important;
 }
 .rounded-top{
   border-top-left-radius:1rem !important;
@@ -568,12 +568,8 @@ opacity:0.9;
 .navbar-toggler {
   border: none !important;
 }
-.mask-gradient{
-  background: linear-gradient(transparent, #10171d, 10%  transparent);
-}
-.user-storie{
-  line-height:-5px;
-}
+
+
 .switch label {
   cursor: pointer; }
   .switch label input[type=checkbox] {

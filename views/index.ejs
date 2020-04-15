@@ -9,7 +9,7 @@
                 <a id="sidebarmenu" class="p-2 text-dark"><i class="icon-menu send"></i></a>
             </div>
             <div  class="chat-bg col-lg-4 col-md-9 m-auto " style="height:100%; left:0; right:0; position:fixed;">
-                <div  class="chat scrollbar-black scroller pt-3 pb-3 pr-0" id="messages" style="height:77%;">                   
+                <div  class="chat scrollbar-black scroller pt-3 pb-3 pr-0" id="messages" style="height:78%;">                   
                     <%- include('./partials/stories') %>
                     <audio id="audio" class="d-none" src="audio/msg-left.mp3" controls></audio>
                 </div>
@@ -33,8 +33,21 @@
     </div>
 </div>
 
+
 <script src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.js"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        items:4,
+        loop:false,
+        center:false,
+        margin:70,
+        URLhashListener:true,
+        autoplayHoverPause:false,
+        startPosition: 'URLHash'
+    });
+</script>
 <script src="js/chat.js"></script>
 
 <%- include('./partials/scripts') %>

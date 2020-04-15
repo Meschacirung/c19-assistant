@@ -75,6 +75,7 @@ menuback.addEventListener('click', function(){
 $("#darkmode").change(function(){
   if(this.checked === true){
     if($('div').hasClass("bg-white") || $('div').hasClass("bg-light")) {
+      $('body').addClass("darkmode");
       $('div').removeClass("bg-white");
       $('div').removeClass("bg-light");
       $('h5').removeClass("text-dark");
@@ -91,6 +92,8 @@ $("#darkmode").change(function(){
       $('.avatar').addClass("bg-white");
       $('path').attr('fill', '#6163cf');
       $('.title').text('Mode sombre');
+      $('.mask').removeClass('darkmode');
+      $('.mask-gradient').removeClass('darkmode');
     }
   }else if (this.checked === false){
       $('h5').addClass("text-dark");
