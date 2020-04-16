@@ -39,6 +39,7 @@ $(function () {
     
                 window.speechSynthesis.speak(utter);
             }
+            textToSpeech();
             
             $('#messages').append($(`
             <div class="msg mt-2">
@@ -69,10 +70,8 @@ $(function () {
         <div class="msg mt-2">
             <div class="text-right">
                 <div class="text-right">
-                    <div style="margin-bottom:-7px">
-                        <h2 class="text-primary-2">
-                            <i class="icon-face"></i>
-                        </h2>
+                    <div class="mb-2">
+                        <img width="35" src="images/user-avatar.jpeg" id="avatar-img" class="img-fluid  rounded-circle" alt="">
                     </div>
                     <span class="msg-right border" id="usermsg">
                     ${msg}

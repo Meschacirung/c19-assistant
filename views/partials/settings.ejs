@@ -1,0 +1,78 @@
+<div class="settings-content">
+    <div class="p-3">
+        <div class="switch mt-4">
+            <label class="row m-flex-center">
+                <div class="col-2">
+                    <div class="rounded-2 bg-white shadow-admin p-2 pr-3 pl-3">
+                        <i class=" icon-camera2 send-2 text-default pt-2"></i>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <span class="stories-title">Désactiver les statuts</span> <br>
+                    <span class="user-storie text-dark font-weight-normal">Ne plus voir les status</span>
+                </div>
+                <div class="col-3">
+                    <input id="stories" type="checkbox">
+                    <span class="lever"></span>
+                </div>
+            </label>
+        </div>
+        <div class="switch mt-4">
+            <label class="row m-flex-center">
+                <div class="col-2">
+                    <div class="rounded-2 bg-white shadow-admin p-2 pr-3 pl-3">
+                        <i class="icon-keyboard_voice send-2 text-danger pt-2"></i>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <span class="voice-title">Désactiver la voix</span> <br>
+                    <span class="user-storie text-dark font-weight-normal">Désactiver la voix du bot</span>
+                </div>
+                <div class="col-3">
+                    <input id="voice" type="checkbox">
+                    <span class="lever"></span>
+                </div>
+            </label>
+        </div>
+        <div class="switch mt-4">
+            <label class="row m-flex-center">
+                <div class="col-2">
+                    <div class="rounded-2 bg-white shadow-admin p-2 pr-3 pl-3">
+                        <i class="icon-bell-o send-2 text-primary pt-2"></i>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <span class="notice-title">Désactiver la notification</span> <br>
+                    <span class="user-storie text-dark font-weight-normal">Ne plus entendre le son</span>
+                </div>
+                <div class="col-3">
+                    <input id="notice" type="checkbox">
+                    <span class="lever"></span>
+                </div>
+            </label>
+        </div>
+        <div class="switch mt-4">
+            <label class="row m-flex-center">
+                <div class="col-2">
+                    <div class="rounded-2 bg-white shadow-admin p-2 pr-3 pl-3">
+                        <i class="icon-face send-2 text-warning pt-2"></i>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span class="avatar-title">Changer l'avatar</span> <br>
+                    <span class="user-storie text-dark font-weight-normal">Par défaut</span>
+                </div>
+                <div class="col-4">
+                    <div style="z-index:20; position: absolute; right:20px; bottom:0;  height:30px; width:30px;" class="shadow-admin m-flex-center p-2 bg-primary-2 rounded-circle bg-primary-light">
+                        <i class="icon-photo_camera text-white"></i>
+                        <input class="d-none" type="file" name="input" id="input" onchange="readUrl(this)">
+                    </div>
+                    <div class="text-right" style="z-index:19; position: relative;">
+                        <img width="70" src="images/meschac.jpg" id="avatar-img" class="img-fluid  rounded-circle" alt="">
+                    </div>
+                </div>
+            </label>
+        </div>
+        
+    </div>
+</div>

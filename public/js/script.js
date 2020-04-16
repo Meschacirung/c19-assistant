@@ -52,6 +52,7 @@ var backlauncher = document.querySelector(".homeback");
 backlauncher.addEventListener('click', function(){
   $('.sidebar').removeClass("aboutpage");
   $('.navcontent').removeClass("abpage");
+  $('.settings-content').removeClass("settings-active");
   $('.abcontent').removeClass("abc-active");
   $('.htitle').text("CovidBot");
   $('.homeback').removeClass("homebactive");
@@ -64,6 +65,7 @@ var menuback = document.querySelector('.menuback');
 
 menuback.addEventListener('click', function(){
   $('.sidebar').removeClass("aboutpage");
+  $('.settings-content').removeClass("settings-active");
   $('.navcontent').removeClass("abpage");
   $('.abcontent').removeClass("abc-active");
   $('.htitle').text("CovidBot");
@@ -71,10 +73,20 @@ menuback.addEventListener('click', function(){
   $('.menuback').removeClass("menubactive");
 });
 
+/* settings page */
+var settingslauncher = document.querySelector("#settings");
+settingslauncher.addEventListener('click', function(){
+  $('.sidebar').addClass("aboutpage");
+  $('.navcontent').addClass("abpage");
+  $('.settings-content').addClass("settings-active");
+  $('.htitle').text("Paramètres");
+  $('.homeback').addClass("homebactive");
+  $('.menuback').addClass("menubactive");
+});
+
 /* darkmode */
 $("#darkmode").change(function(){
   if(this.checked === true){
-    if($('div').hasClass("bg-white") || $('div').hasClass("bg-light")) {
       $('body').addClass("darkmode");
       $('div').removeClass("bg-white");
       $('div').removeClass("bg-light");
@@ -94,23 +106,25 @@ $("#darkmode").change(function(){
       $('.title').text('Mode sombre');
       $('.mask').removeClass('darkmode');
       $('.mask-gradient').removeClass('darkmode');
-    }
-  }else if (this.checked === false){
-      $('h5').addClass("text-dark");
-      $('div').removeClass("darkmode");
-      $('input').removeClass("darkmode");
-      $('.msg-left').removeClass("msg-darkmode");
-      $('.msg-right').removeClass("msg-darkmode");
-      $('form').removeClass("darkmode");
-      $('button').removeClass("bg-primary-2");
-      $('.icon-send2').addClass("text-primary-2");
-      $('i').removeClass("text-white");
-      $('.features').removeClass("msg-darkmode");
-      $('path').attr('fill', '#585af5');
-      $('.title').text('Mode jour');
-      $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle, .icon-linkedin, .icon-mail_outline').removeClass("text-primary-2");
+  }
+  else{
+    $('body').removeClass("darkmode");
+    $('h5').addClass("text-dark");
+    $('div').removeClass("darkmode");
+    $('input').removeClass("darkmode");
+    $('.msg-left').removeClass("msg-darkmode");
+    $('.msg-right').removeClass("msg-darkmode");
+    $('form').removeClass("darkmode");
+    $('button').removeClass("bg-primary-2");
+    $('.icon-send2').addClass("text-primary-2");
+    $('i').removeClass("text-white");
+    $('.features').removeClass("msg-darkmode");
+    $('path').attr('fill', '#585af5');
+    $('.title').text('Mode jour');
+    $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle, .icon-linkedin, .icon-mail_outline').removeClass("text-primary-2");
   }
 });
+
 
 /* Story shower*/
 var storylauncher = document.querySelector(".owl-one");
@@ -125,27 +139,58 @@ returnhome.addEventListener('click', function(){
   $('.story-shower').removeClass("story-active");
 });
 
+var storieshidder =  document.querySelector("#stories-hidder");
+
+storieshidder.addEventListener('click', function(){
+  $('.story-shower').removeClass("story-active");
+  $('.stories').addClass("d-none");
+});
+
 function hidestories () {
   $("#stories").change(function(){
     if(this.checked === true){
-      $('.story-shower').removeClass("story-active");
-      $('.stories').addClass("stories-hidden");
+      $('.stories-title').text("Désactiver les statuts");
+      $('.stories').removeClass("d-none");
+    }else{
+      $('.stories-title').text("Activer les statuts");
+      $('.stories').addClass("d-none");
     }
   });
 }
+hidestories();
 function hidesound () {
-  $("#sound").change(function(){
+  $("#notice").change(function(){
     if(this.checked === true){
-      $('.story-shower').removeClass("story-active");
-      $('.stories').addClass("stories-hidden");
+      $('.notice-title').text("Désactiver la notification");
+      msgleft.play();
+    }else{
+      $('.notice-title').text("Activer la notification");
     }
   });
 }
+hidesound();
 function hidevoice () {
-  $("#sound").change(function(){
+  $("#voice").change(function(){
     if(this.checked === true){
-      $('.story-shower').removeClass("story-active");
-      $('.stories').addClass("stories-hidden");
+      $('.voice-title').text("Désactiver la voix");
+      textToSpeech();
+    }else{
+      $('.voice-title').text("Activer lavoix");
     }
   });
 }
+
+hidevoice();
+
+var input = document.querySelector("#input");
+
+var imagedataurl;
+function readUrl(input) {
+  var reader = new FileReader();
+  reader.onload= function(e){
+      imagedataurl=e.target.result;
+      document.querySelector('#avatar-img').src = e.target.result;
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+

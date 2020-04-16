@@ -704,6 +704,13 @@ opacity:0.9;
   margin-top:0px;
   display:block;
 }
+.settings-content{
+  transition: .3s;
+  display: none;
+}
+.settings-active{
+  display:block;
+}
 .homeback{
     position:fixed;
     top:10px;
@@ -839,7 +846,7 @@ opacity:0.9;
   background: #141d26 !important;
   color: #f1f1f1 !important;
 }
-.darkmode .title{
+.darkmode .title, .darkmode .voice-title, .darkmode .user-storie, .darkmode .avatar-title, .darkmode .notice-title, .darkmode .stories-title{
   background: transparent !important;
   color: #f1f1f1 !important;
 }
