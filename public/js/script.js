@@ -110,4 +110,42 @@ $("#darkmode").change(function(){
       $('.title').text('Mode jour');
       $('.icon-gear, .icon-github, .icon-paypal, .icon-brightness_2, .icon-exclamation-circle, .icon-linkedin, .icon-mail_outline').removeClass("text-primary-2");
   }
-})
+});
+
+/* Story shower*/
+var storylauncher = document.querySelector(".owl-one");
+var returnhome = document.querySelector("#home");
+
+storylauncher.addEventListener('click', function(){
+  $('.story-shower').addClass("story-active");
+  $('#home').addClass("active-icon");
+});
+
+returnhome.addEventListener('click', function(){
+  $('.story-shower').removeClass("story-active");
+});
+
+function hidestories () {
+  $("#stories").change(function(){
+    if(this.checked === true){
+      $('.story-shower').removeClass("story-active");
+      $('.stories').addClass("stories-hidden");
+    }
+  });
+}
+function hidesound () {
+  $("#sound").change(function(){
+    if(this.checked === true){
+      $('.story-shower').removeClass("story-active");
+      $('.stories').addClass("stories-hidden");
+    }
+  });
+}
+function hidevoice () {
+  $("#sound").change(function(){
+    if(this.checked === true){
+      $('.story-shower').removeClass("story-active");
+      $('.stories').addClass("stories-hidden");
+    }
+  });
+}

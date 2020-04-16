@@ -2,10 +2,12 @@
     .story-shower{
         position :fixed;
         height:100%;
-        width:100%;
+        width:33%;
         z-index:3000;
-        left:0;
-        right:0;
+        left:33.333%;
+        bottom:-10%;
+        transition:.4s;
+        display:none;
     };
     .story-header {
         position: absolute;
@@ -23,15 +25,14 @@
         position: absolute;
         height:80%;
         width:100%;
-        top:0;
-        right:0;
-        left:0;
-        bottom:0;
+        bottom:13%; 
     }
     .story-content-in{
         margin:auto;
         text-align: center;
         position: relative;
+        justify-content: center;
+        align-items: center;
     }
     .like{
         animation: infinite jump alternate cubic-bezier(0.68, -0.55, 0.265, 1.55) .5s, 1s;
@@ -39,8 +40,11 @@
     .dislike{
         animation: infinite down alternate cubic-bezier(0.68, -0.55, 0.265, 1.55) .7s, 1s;
     }
-    .smile{
-        animation: infinite smile alternate cubic-bezier(0.68, -0.55, 0.265, 1.55) .7s, 1s;
+    .like:hover{
+        animation: jump .5s ease;
+    }
+    .dislike:hover{
+        animation:none;
     }
     @keyframes jump{
         0%{
@@ -64,55 +68,77 @@
             margin-top:0px;
         }
     }
-    @keyframes smile{
-        0%{
-            margin-top:-8px;
-        };
-        100%{
-            margin-top:0px;
+    @media(max-width:768px){
+        .story-shower{
+            width:100%;
+            left:0;
         }
+    }
+    @media (max-width:990px) and (min-width:769px){
+        .story-shower{
+            width:75%;
+            left:12.5%;
+        }
+    }
+    .story-active{
+        display: block !important;
+        top:0 !important;
+        bottom:0 !important;
     }
 </style>
 
-<div class="story-shower darkmode">
-    <div class="story-header p-3">
-        <div class="row m-flex-center">
-            <div class="col-1">
-                <a href=""><i class=" icon-keyboard_backspace send-2 text-dark"></i></a>
-            </div>
-            <div class="ml-1 col-8 row m-flex-center">
-                <div class="col-4">
-                    <img src="images/meschac.jpg" alt="" width="50" class="rounded-circle">
+<div>
+    <div class="story-shower bg-white">
+        <div class="story-header p-3">
+            <div class="row m-flex-center">
+                <div class="col-1">
+                    <a id="home" ><i class=" icon-keyboard_backspace send-2 text-dark"></i></a>
                 </div>
-                <div class="col-8">
-                    <h6 style="margin-bottom:-3px;" class="font-weight-normal story-title">Méschac Irung</h6>
-                    <span class="user-storie story-title text-dark font-weight-normal">Il y a 45 min</span>
+                <div class="ml-1 col-8 row m-flex-center">
+                    <div class="col-4">
+                        <img src="images/meschac.jpg" alt="" width="50" class="rounded-circle">
+                    </div>
+                    <div class="col-8">
+                        <h6 style="margin-bottom:-3px;" class="font-weight-normal story-title">Méschac Irung</h6>
+                        <span class="user-storie story-title text-dark font-weight-normal">Il y a 45 min</span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-2 ml-auto text-center">
-                <a href=""><i class="icon-more_vert send-2 text-dark"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="story-content-in">
-        <div class="story-content">
-            <div class="owl-two owl-carousel">
-                <div>
-                    <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore ullam architecto dolore non rerum voluptates fugiat rem officia, dolorum consectetur ex illo natus at placeat omnis adipisci, eum quidem eligendi!</h4>
-                </div>
-                <div class="img-text">
-                    <img src="images/mask.jpg" alt="" class="img-fluid">
-                    <p class="mt-4">Amet consectetur adipisicing elit. Nemo, Accusamus id et a libero odit.</p>
+                <div class="col-2 ml-auto text-center">
+                    <div class="dropdown">
+                        <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><i class="icon-more_vert send-2 text-dark"></i></a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Paramètres</a>
+                          <a class="dropdown-item" href="#">Masquer les stututs</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="story-bottom">
-        <div class="m-flex-center text-center m-auto">
-            <a href="" class="send-2">&#128525</a>
-            <a href="" class="btn-floating bg-primary-2"><i class="send-2 icon-thumbs-up like"></i></a>
-            <a href="" class="btn-floating bg-danger"><i class="send-2 icon-thumbs-down dislike"></i></a>
-            <a href="" class="send-2">&#128530</a>
+        <div class="story-content-in">
+            <div class="story-content">
+                <div class="owl-two owl-carousel">
+                    <div class="text"">
+                        <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore ullam architecto dolore non rerum voluptates fugiat rem officia, dolorum consectetur ex illo natus at placeat omnis adipisci, eum quidem eligendi!</h4>
+                    </div>
+                    <div class="img-text">
+                        <img src="images/mask.jpg" alt="" class="img-fluid">
+                        <p class="mt-4">Amet consectetur adipisicing elit. Nemo, Accusamus id et a libero odit.</p>
+                    </div>
+                    <div class="img-text">
+                        <img src="images/meschac.jpg" alt="" class="img-fluid">
+                        <p class="mt-4">Amet consectetur adipisicing elit. Nemo, Accusamus id et a libero odit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="story-bottom">
+            <div class="m-flex-center text-center m-auto">
+                <a href="#" class="send-2 btn-floating emoji">&#128525</a>
+                <a href="#" class="btn-floating bg-primary-2"><i class="send-2 icon-thumbs-up like"></i></a>
+                <a href="#" class="btn-floating bg-danger"><i class="send-2 icon-thumbs-down dislike"></i></a>
+                <a href="#" class="send-2 btn-floating emoji">&#128530</a>
+            </div>
         </div>
     </div>
 </div>

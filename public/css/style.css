@@ -376,6 +376,13 @@ cursor: pointer; }
 .mask-gradient{
   background: linear-gradient(transparent, #141d26);
 }
+.mask{
+  cursor: pointer;
+}
+.dropdown-item:hover{
+  color: #ffffff;
+  background: #585af5 !important;
+}
 .storie{
   width:90px;
 }
